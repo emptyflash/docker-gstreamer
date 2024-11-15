@@ -131,7 +131,7 @@ apt-get install -y --no-install-recommends \
   glibc-tools \
   libqrencode-dev \
   libjson-glib-dev
-pip3 install meson ninja hotdoc
+pip3 install meson ninja hotdoc tomli
 
 ARCH=$(dpkg --print-architecture)
 if [[ $ARCH == "amd64" ]]; then
@@ -161,3 +161,5 @@ if [[ $ARCH == "amd64" ]]; then
 fi
 
 wget -O- https://sh.rustup.rs | sh -s -- -y --default-toolchain stable
+source $HOME/.cargo/env
+cargo install cargo-c
